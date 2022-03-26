@@ -8,22 +8,28 @@ public class Prime {
     }
 
     static void prime() {
-
-        System.out.println("Enter a no to check prime or not");
+        int i = 2;
+        boolean flag = false;
+        System.out.println("Enter a number to check Prime or not a Prime");
         Scanner sc = new Scanner(System.in);
-        int no = sc.nextInt();
-        for (int i = 2; i < no; i++) {
-            if (no % i == 0) {
-                System.out.println("Number is not a prime");
-
+        int num = sc.nextInt();
+        while (i <= num / 2) {
+            // condition for nonprime number
+            if (num % i == 0) {
+                flag = true;
+                break;
             }
 
-            else{
-            System.out.println("Number is prime");
+            ++i;
         }
-     }
 
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
     }
+
 }
+
 
 
